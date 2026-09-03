@@ -41,3 +41,11 @@ export const paymentRequests = sqliteTable("payment_requests", {
   status: text("status").notNull().default("รอตรวจสอบ"), note: text("note").notNull().default(""),
   createdAt: integer("created_at", { mode: "timestamp_ms" }).notNull(), updatedAt: integer("updated_at", { mode: "timestamp_ms" }).notNull(),
 }, (table) => [index("idx_payment_requests_status").on(table.status), index("idx_payment_requests_created_at").on(table.createdAt)]);
+
+export const shipments = sqliteTable("shipments", {
+  id:text("id").primaryKey(), shipmentNo:text("shipment_no").notNull().unique(), trackingNo:text("tracking_no").notNull(),
+  description:text("description").notNull(), method:text("method").notNull().default("รถ"), weight:real("weight").notNull().default(0),
+  volume:real("volume").notNull().default(0), rate:real("rate").notNull().default(45), estimatedCost:real("estimated_cost").notNull().default(0),
+  status:text("status").notNull().default("รอของเข้าคลังจีน"), note:text("note").notNull().default(""),
+  createdAt:integer("created_at",{mode:"timestamp_ms"}).notNull(), updatedAt:integer("updated_at",{mode:"timestamp_ms"}).notNull(),
+},t=>[index("idx_shipments_status").on(t.status),index("idx_shipments_created_at").on(t.createdAt)]);

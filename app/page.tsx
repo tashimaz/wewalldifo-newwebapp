@@ -15,7 +15,7 @@ export default function Home() {
   const [saved, setSaved] = useState(false);
   const r = useMemo(() => { const cny = price * qty + chinaShip, goods = cny * rate, total = goods + thaiShip + other, unit = qty ? total / qty : 0, profit = sell - unit; return { cny, goods, total, unit, profit, allProfit: profit * qty, margin: sell ? profit / sell * 100 : 0 }; }, [price, qty, chinaShip, rate, thaiShip, other, sell]);
   const reset = () => { setPrice(12); setQty(500); setChinaShip(80); setRate(4.65); setThaiShip(2500); setOther(500); setSell(99); setSaved(false); };
-  const nav = [[LayoutDashboard,"Dashboard","/dashboard"],[Calculator,"คำนวณต้นทุน","/"],[PackageCheck,"My China Orders","/orders"],[Languages,"ผู้ช่วยภาษาจีน","/assistant"],[FileText,"Supplier Book","/suppliers"],[WalletCards,"ชำระเงินหยวน","/payments"],[Truck,"ขนส่งจีน–ไทย","#"]] as const;
+  const nav = [[LayoutDashboard,"Dashboard","/dashboard"],[Calculator,"คำนวณต้นทุน","/"],[PackageCheck,"My China Orders","/orders"],[Languages,"ผู้ช่วยภาษาจีน","/assistant"],[FileText,"Supplier Book","/suppliers"],[WalletCards,"ชำระเงินหยวน","/payments"],[Truck,"ขนส่งจีน–ไทย","/shipping"]] as const;
 
   return <main className="shell">
     <aside className="sidebar">

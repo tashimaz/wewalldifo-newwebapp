@@ -7,7 +7,7 @@ import "./dashboard-live.css";
 type Order={id:string;orderNo:string;supplier:string;productName:string;cnyAmount:number;exchangeRate:number;thaiExtraCost:number;expectedRevenue:number;status:string;createdAt:string};
 const money=new Intl.NumberFormat("th-TH",{minimumFractionDigits:2,maximumFractionDigits:2});
 const tone=(s:string)=>s==="ถึงไทยแล้ว"?"green":s==="ส่งออกจากจีน"?"gold":s==="รอชำระเงิน"?"gray":"blue";
-const nav=[[LayoutDashboard,"Dashboard","/dashboard"],[Calculator,"คำนวณต้นทุน","/"],[PackageCheck,"My China Orders","/orders"],[Languages,"ผู้ช่วยภาษาจีน","/assistant"],[FileText,"Supplier Book","/suppliers"],[WalletCards,"ชำระเงินหยวน","/payments"],[Truck,"ขนส่งจีน–ไทย","#shipping"]] as const;
+const nav=[[LayoutDashboard,"Dashboard","/dashboard"],[Calculator,"คำนวณต้นทุน","/"],[PackageCheck,"My China Orders","/orders"],[Languages,"ผู้ช่วยภาษาจีน","/assistant"],[FileText,"Supplier Book","/suppliers"],[WalletCards,"ชำระเงินหยวน","/payments"],[Truck,"ขนส่งจีน–ไทย","/shipping"]] as const;
 
 export default function Dashboard(){
  const [orders,setOrders]=useState<Order[]>([]);
