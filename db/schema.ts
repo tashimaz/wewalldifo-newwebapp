@@ -17,3 +17,18 @@ export const orders = sqliteTable("orders", {
   createdAt: integer("created_at", { mode: "timestamp_ms" }).notNull(),
   updatedAt: integer("updated_at", { mode: "timestamp_ms" }).notNull(),
 }, (table) => [index("idx_orders_status").on(table.status), index("idx_orders_created_at").on(table.createdAt)]);
+
+export const suppliers = sqliteTable("suppliers", {
+  id: text("id").primaryKey(),
+  name: text("name").notNull(),
+  contactName: text("contact_name").notNull().default(""),
+  platform: text("platform").notNull().default("1688"),
+  contact: text("contact").notNull().default(""),
+  shopUrl: text("shop_url").notNull().default(""),
+  category: text("category").notNull().default(""),
+  rating: integer("rating").notNull().default(3),
+  status: text("status").notNull().default("กำลังทดลอง"),
+  note: text("note").notNull().default(""),
+  createdAt: integer("created_at", { mode: "timestamp_ms" }).notNull(),
+  updatedAt: integer("updated_at", { mode: "timestamp_ms" }).notNull(),
+}, (table) => [index("idx_suppliers_status").on(table.status), index("idx_suppliers_created_at").on(table.createdAt)]);
