@@ -7,7 +7,7 @@ import "./orders.css";
 type Order = { id:string; orderNo:string; supplier:string; productName:string; source:string; sourceUrl:string; quantity:number; cnyAmount:number; exchangeRate:number; thaiExtraCost:number; expectedRevenue:number; status:string; note:string; createdAt:string };
 const statuses=["รอชำระเงิน","ชำระแล้ว","กำลังผลิต","ส่งออกจากจีน","ถึงไทยแล้ว","ยกเลิก"];
 const empty={supplier:"",productName:"",source:"1688",sourceUrl:"",quantity:1,cnyAmount:0,exchangeRate:4.65,thaiExtraCost:0,expectedRevenue:0,status:"รอชำระเงิน",note:""};
-const nav=[[LayoutDashboard,"Dashboard","/dashboard"],[Calculator,"คำนวณต้นทุน","/"],[PackageCheck,"My China Orders","/orders"],[Languages,"ผู้ช่วยภาษาจีน","/assistant"],[FileText,"Supplier Book","/suppliers"],[WalletCards,"ชำระเงินหยวน","#"],[Truck,"ขนส่งจีน–ไทย","#"]] as const;
+const nav=[[LayoutDashboard,"Dashboard","/dashboard"],[Calculator,"คำนวณต้นทุน","/"],[PackageCheck,"My China Orders","/orders"],[Languages,"ผู้ช่วยภาษาจีน","/assistant"],[FileText,"Supplier Book","/suppliers"],[WalletCards,"ชำระเงินหยวน","/payments"],[Truck,"ขนส่งจีน–ไทย","#"]] as const;
 const money=new Intl.NumberFormat("th-TH",{minimumFractionDigits:2,maximumFractionDigits:2});
 
 export default function OrdersPage(){

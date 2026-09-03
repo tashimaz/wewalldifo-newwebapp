@@ -3,7 +3,7 @@ import { useMemo, useState } from "react";
 import { Calculator, Check, Clipboard, FileText, Languages, LayoutDashboard, MessageSquareText, PackageCheck, Settings, Sparkles, Truck, WalletCards } from "lucide-react";
 import "./assistant.css";
 type P={product:string;qty:string;price:string;deadline:string};
-const nav=[[LayoutDashboard,"Dashboard","/dashboard"],[Calculator,"คำนวณต้นทุน","/"],[PackageCheck,"My China Orders","/orders"],[Languages,"ผู้ช่วยภาษาจีน","/assistant"],[FileText,"Supplier Book","/suppliers"],[WalletCards,"ชำระเงินหยวน","#"],[Truck,"ขนส่งจีน–ไทย","#"]] as const;
+const nav=[[LayoutDashboard,"Dashboard","/dashboard"],[Calculator,"คำนวณต้นทุน","/"],[PackageCheck,"My China Orders","/orders"],[Languages,"ผู้ช่วยภาษาจีน","/assistant"],[FileText,"Supplier Book","/suppliers"],[WalletCards,"ชำระเงินหยวน","/payments"],[Truck,"ขนส่งจีน–ไทย","#"]] as const;
 const templates=[
  {id:"price",group:"ก่อนสั่งซื้อ",title:"ขอราคาและ MOQ",desc:"ถามราคาตามจำนวนและจำนวนขั้นต่ำ",make:(p:P)=>`您好，我对${p.product||"这款产品"}感兴趣。请问订购 ${p.qty||100} 件的价格是多少？最低起订量是多少？请给我最优惠的价格，谢谢。`,thai:(p:P)=>`สนใจ${p.product||"สินค้านี้"} หากสั่ง ${p.qty||100} ชิ้น ราคาและจำนวนขั้นต่ำเท่าไร พร้อมขอราคาที่ดีที่สุด`},
  {id:"real",group:"ก่อนสั่งซื้อ",title:"ขอรูปและวิดีโอจริง",desc:"ตรวจสอบสินค้าก่อนตัดสินใจ",make:(p:P)=>`您好，可以发一些${p.product||"这款产品"}的实拍照片和视频给我看看吗？我想确认颜色、材质和细节，谢谢。`,thai:(p:P)=>`ขอรูปและวิดีโอจริงของ${p.product||"สินค้านี้"} เพื่อตรวจสอบสี วัสดุ และรายละเอียด`},

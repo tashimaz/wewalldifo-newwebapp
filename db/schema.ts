@@ -32,3 +32,12 @@ export const suppliers = sqliteTable("suppliers", {
   createdAt: integer("created_at", { mode: "timestamp_ms" }).notNull(),
   updatedAt: integer("updated_at", { mode: "timestamp_ms" }).notNull(),
 }, (table) => [index("idx_suppliers_status").on(table.status), index("idx_suppliers_created_at").on(table.createdAt)]);
+
+export const paymentRequests = sqliteTable("payment_requests", {
+  id: text("id").primaryKey(), requestNo: text("request_no").notNull().unique(),
+  recipient: text("recipient").notNull(), channel: text("channel").notNull().default("Alipay"),
+  account: text("account").notNull().default(""), purpose: text("purpose").notNull(), reference: text("reference").notNull().default(""),
+  cnyAmount: real("cny_amount").notNull().default(0), exchangeRate: real("exchange_rate").notNull().default(4.65),
+  status: text("status").notNull().default("รอตรวจสอบ"), note: text("note").notNull().default(""),
+  createdAt: integer("created_at", { mode: "timestamp_ms" }).notNull(), updatedAt: integer("updated_at", { mode: "timestamp_ms" }).notNull(),
+}, (table) => [index("idx_payment_requests_status").on(table.status), index("idx_payment_requests_created_at").on(table.createdAt)]);

@@ -7,7 +7,7 @@ import "./suppliers.css";
 type Supplier={id:string;name:string;contactName:string;platform:string;contact:string;shopUrl:string;category:string;rating:number;status:string;note:string;createdAt:string};
 const statuses=["คู่ค้าหลัก","ใช้งานได้","กำลังทดลอง","งดใช้"];
 const empty={name:"",contactName:"",platform:"1688",contact:"",shopUrl:"",category:"",rating:3,status:"กำลังทดลอง",note:""};
-const nav=[[LayoutDashboard,"Dashboard","/dashboard"],[Calculator,"คำนวณต้นทุน","/"],[PackageCheck,"My China Orders","/orders"],[Languages,"ผู้ช่วยภาษาจีน","/assistant"],[FileText,"Supplier Book","/suppliers"],[WalletCards,"ชำระเงินหยวน","#"],[Truck,"ขนส่งจีน–ไทย","#"]] as const;
+const nav=[[LayoutDashboard,"Dashboard","/dashboard"],[Calculator,"คำนวณต้นทุน","/"],[PackageCheck,"My China Orders","/orders"],[Languages,"ผู้ช่วยภาษาจีน","/assistant"],[FileText,"Supplier Book","/suppliers"],[WalletCards,"ชำระเงินหยวน","/payments"],[Truck,"ขนส่งจีน–ไทย","#"]] as const;
 
 export default function SuppliersPage(){
  const [items,setItems]=useState<Supplier[]>([]),[loading,setLoading]=useState(true),[saving,setSaving]=useState(false),[showForm,setShowForm]=useState(false),[query,setQuery]=useState(""),[filter,setFilter]=useState("ทั้งหมด"),[error,setError]=useState("");
