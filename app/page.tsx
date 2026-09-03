@@ -19,13 +19,13 @@ export default function Home() {
 
   return <main className="shell">
     <aside className="sidebar">
-      <div className="brand"><b>V</b><div><strong>VIVALDI</strong><small>CHINA TOOLS</small></div></div>
+      <div className="brand"><img src="/wewalldifo-logo.png" alt="WEWALLDIFO Company Limited" /></div>
       <p className="nav-title">เครื่องมือธุรกิจจีน</p>
       <nav>{nav.map(([Icon,label],i) => <a key={label} className={i===1?"active":""} href={i===1?"#calculator":"#"}><Icon size={19}/>{label}{i===2&&<em>3</em>}</a>)}</nav>
       <div className="sidebar-foot"><a href="#"><Settings size={19}/>ตั้งค่า</a><div className="profile"><span>T</span><div><strong>คุณตั้ม</strong><small>VW-000128</small></div></div></div>
     </aside>
     <section className="workspace">
-      <header><div className="mobile-logo">VIVALDI</div><div className="today-rate"><span>เรท CNY วันนี้</span><b>¥1 = ฿{rate.toFixed(2)}</b><small>อัปเดตล่าสุด 10:35</small></div><button>LINE　บัญชีของฉัน</button></header>
+      <header><div className="mobile-logo"><img src="/wewalldifo-logo.png" alt="WEWALLDIFO" /></div><div className="today-rate"><span>เรท CNY วันนี้</span><b>¥1 = ฿{rate.toFixed(2)}</b><small>อัปเดตล่าสุด 10:35</small></div><button>LINE　บัญชีของฉัน</button></header>
       <div className="content" id="calculator">
         <div className="heading"><div><small>COST CALCULATOR</small><h1>คำนวณต้นทุนสินค้าถึงไทย</h1><p>รู้ต้นทุนจริงก่อนสั่งซื้อ และวางราคาขายให้มีกำไร</p></div><button onClick={reset}><RefreshCcw size={17}/>ล้างข้อมูล</button></div>
         <div className="calculator-grid">

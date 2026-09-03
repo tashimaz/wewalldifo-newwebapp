@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "./brand.css";
 
 export const metadata: Metadata = {
-  title: "Vivaldi China Tools",
+  title: "WEWALLDIFO China Tools",
   description: "เครื่องมือคำนวณต้นทุนและจัดการธุรกิจจีนสำหรับคนไทย",
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
+    icon: "/wewalldifo-logo.png",
+    shortcut: "/wewalldifo-logo.png",
   },
 };
 

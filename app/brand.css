@@ -1,0 +1,56 @@
+:root {
+  --ink: #15254a;
+  --green: #294a9b;
+  --deep: #071a3b;
+  --line: #dce2ee;
+  --muted: #6f788c;
+  --bg: #f4f6fa;
+}
+
+.brand {
+  height: 116px;
+  padding: 0;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.brand img {
+  width: 230px;
+  height: 230px;
+  max-width: none;
+  object-fit: contain;
+}
+
+.sidebar nav a.active {
+  background: #1c3d80;
+  box-shadow: inset 3px 0 #d7a43e;
+}
+
+.sidebar nav em { background: #b77a12; }
+.heading small, .today-rate b { color: #b77a12; }
+.section-title > span { background: #e8edf8; color: #294a9b; }
+.input-wrap:focus-within { border-color: #294a9b; box-shadow: 0 0 0 3px #294a9b18; }
+.cost-card { background: #142f69; }
+.cost-head i, .unit b { color: #e2b34f; }
+.save { background: #294a9b; box-shadow: 0 8px 18px #294a9b2a; }
+.save:hover { background: #203d82; }
+.bar i { background: linear-gradient(90deg, #294a9b, #d7a43e); }
+
+.mobile-logo {
+  width: 118px;
+  height: 50px;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-logo img {
+  width: 126px;
+  height: 126px;
+  max-width: none;
+  object-fit: contain;
+}
+
+@media (max-width: 680px) {
+  .mobile-logo { display: flex; }
+}
