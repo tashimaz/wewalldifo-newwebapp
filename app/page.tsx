@@ -15,13 +15,13 @@ export default function Home() {
   const [saved, setSaved] = useState(false);
   const r = useMemo(() => { const cny = price * qty + chinaShip, goods = cny * rate, total = goods + thaiShip + other, unit = qty ? total / qty : 0, profit = sell - unit; return { cny, goods, total, unit, profit, allProfit: profit * qty, margin: sell ? profit / sell * 100 : 0 }; }, [price, qty, chinaShip, rate, thaiShip, other, sell]);
   const reset = () => { setPrice(12); setQty(500); setChinaShip(80); setRate(4.65); setThaiShip(2500); setOther(500); setSell(99); setSaved(false); };
-  const nav = [[LayoutDashboard,"Dashboard"],[Calculator,"คำนวณต้นทุน"],[PackageCheck,"My China Orders"],[Languages,"ผู้ช่วยภาษาจีน"],[FileText,"Supplier Book"],[WalletCards,"ชำระเงินหยวน"],[Truck,"ขนส่งจีน–ไทย"]] as const;
+  const nav = [[LayoutDashboard,"Dashboard","/dashboard"],[Calculator,"คำนวณต้นทุน","/"],[PackageCheck,"My China Orders","#"],[Languages,"ผู้ช่วยภาษาจีน","#"],[FileText,"Supplier Book","#"],[WalletCards,"ชำระเงินหยวน","#"],[Truck,"ขนส่งจีน–ไทย","#"]] as const;
 
   return <main className="shell">
     <aside className="sidebar">
       <div className="brand"><img src="/wewalldifo-logo.png" alt="WEWALLDIFO Company Limited" /></div>
       <p className="nav-title">เครื่องมือธุรกิจจีน</p>
-      <nav>{nav.map(([Icon,label],i) => <a key={label} className={i===1?"active":""} href={i===1?"#calculator":"#"}><Icon size={19}/>{label}{i===2&&<em>3</em>}</a>)}</nav>
+      <nav>{nav.map(([Icon,label,href],i) => <a key={label} className={i===1?"active":""} href={href}><Icon size={19}/>{label}{i===2&&<em>3</em>}</a>)}</nav>
       <div className="sidebar-foot"><a href="#"><Settings size={19}/>ตั้งค่า</a><div className="profile"><span>T</span><div><strong>คุณตั้ม</strong><small>VW-000128</small></div></div></div>
     </aside>
     <section className="workspace">
