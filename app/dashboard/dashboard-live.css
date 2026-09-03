@@ -4,3 +4,9 @@
   text-align: center;
   font-size: 12px;
 }
+
+.service-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:0 0 17px}
+.service-strip a{display:grid;grid-template-columns:34px 1fr auto auto;align-items:center;gap:8px;padding:12px 14px;border:1px solid #dfe4ee;border-radius:12px;background:#f9fafe;color:#526078;text-decoration:none}
+.service-strip svg{width:18px;color:#294a9b}.service-strip span{font-size:12px;font-weight:700}.service-strip b{font-size:18px;color:#17254a}.service-strip small{font-size:10px;color:#8991a1}
+@media(max-width:1050px){.service-strip{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:430px){.service-strip{grid-template-columns:1fr}}
