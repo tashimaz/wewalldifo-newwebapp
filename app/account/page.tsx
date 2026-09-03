@@ -1,0 +1,4 @@
+import { chatGPTSignOutPath, requireChatGPTUser } from "../chatgpt-auth";
+import "./account.css";
+export const dynamic="force-dynamic";
+export default async function AccountPage(){const user=await requireChatGPTUser("/account");return <main className="account-page"><section><a className="account-brand" href="/dashboard"><img src="/wewalldifo-logo.png" alt="WEWALLDIFO"/></a><div className="account-avatar">{user.displayName.slice(0,1).toUpperCase()}</div><small>บัญชีผู้ใช้งาน</small><h1>{user.displayName}</h1><p>{user.email}</p><div className="account-secure"><b>ข้อมูลของบัญชีนี้ถูกแยกแล้ว</b><span>ออเดอร์ Supplier คำขอชำระ และพัสดุ จะแสดงเฉพาะเจ้าของบัญชี</span></div><div className="account-actions"><a href="/dashboard">กลับ Dashboard</a><a className="signout" href={chatGPTSignOutPath("/")}>ออกจากระบบ</a></div><footer>LINE Login จะเชื่อมเพิ่มภายหลังเมื่อเปิด LINE Developers Channel</footer></section></main>}

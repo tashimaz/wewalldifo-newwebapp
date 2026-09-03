@@ -55,3 +55,4 @@
 @media (max-width: 680px) {
   .mobile-logo { display: flex; }
 }
+.workspace>header .account-link{padding:9px 13px;border:1px solid #b9dfd0;border-radius:9px;background:#effaf5;color:#08714d;font-size:13px;font-weight:750;text-decoration:none}
