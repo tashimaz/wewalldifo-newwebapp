@@ -8,17 +8,18 @@
 }
 
 .brand {
-  height: 116px;
+  height: 130px;
   padding: 0;
-  overflow: hidden;
+  overflow: visible;
   justify-content: center;
 }
 
 .brand img {
-  width: 230px;
-  height: 230px;
+  width: 220px;
+  height: 220px;
   max-width: none;
   object-fit: contain;
+  transform: translateY(5px);
 }
 
 .sidebar nav a.active {
@@ -38,15 +39,15 @@
 
 .mobile-logo {
   width: 118px;
-  height: 50px;
-  overflow: hidden;
+  height: 56px;
+  overflow: visible;
   align-items: center;
   justify-content: center;
 }
 
 .mobile-logo img {
-  width: 126px;
-  height: 126px;
+  width: 108px;
+  height: 108px;
   max-width: none;
   object-fit: contain;
 }
